@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Document</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
@@ -13,30 +14,41 @@
     />
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <body class="d-flex flex-column">
+  <body class="d-flex flex-column h-100">
     <h1 class="display-1 m-5">Fibonacci Calculator</h1>
-    <div class="d-flex m-5 align-items-center">
+    <form class="d-flex m-5 align-items-center">
       <div class="fs-4 p-1">The Fibonacci of</div>
-      <div class="p-1">
-        <input type="number" size="1" placeholder="#" id="fibonacciInput" />
+      <div id="inputdiv" class="p-1 d-flex">
+        <input
+          class="form-control"
+          type="number"
+          size="1"
+          placeholder="#"
+          id="fibonacciInput"
+        />
       </div>
+
       <div class="p-1">
-        <button type="submit" id="calculateButton" class="btn btn-primary">
+        <button type="button" id="calculateButton" class="btn btn-primary">
           is
         </button>
       </div>
-      <div class="ms-3 spinner-border" role="status">
-        <span class="visually-hidden">Loading...</span>
+      <div
+        id="spinner-id"
+        class="ms-2 spinner-border visually-hidden"
+        role="status"
+      ></div>
+      <div class="fs-4 p-1 ml-5">
+        <u
+          ><b><span id="fibonacciResult"></span></b
+        ></u>
       </div>
-      <div id="fibonacciResult" class="fs-4 p-1 ml-5">
-        <u><b>Y</b></u>
-      </div>
+    </form>
+    <div id="error-42" class="d-flex position-absolute text-danger error-div">
+      <span id="error-text"></span>
     </div>
   </body>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-    crossorigin="anonymous"
-  ></script>
+  <!-- JavaScript Bundle with Popper -->
+
   <script src="main.js"></script>
 </html>
