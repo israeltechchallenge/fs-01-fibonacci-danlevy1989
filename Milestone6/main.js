@@ -39,8 +39,10 @@ function getFromServer(number) {
   const ficonacciServer = `http://localhost:5050/fibonacci/${number}`;
   return fetch(ficonacciServer)
     .then((response) => {
-      if (response.status === 400) {
-        throw new Error(`42 is the meaning of life!`);
+      if (!response.ok) {
+        return res.text().then((msg) => {
+          throw new Error(msg);
+        });
       }
       return response.json();
     })
@@ -75,6 +77,8 @@ function getAllResults() {
 }
 
 function showResults(sortedDatesArray) {
+  fibonacciResult.classList.remove("text-danger");
+  fibonacciInputBox.classList.remove("border-danger", "text-danger");
   spinnerDiv.classList.add("visually-hidden");
   for (let i = 0; i < 10; i++) {
     listOfResults.innerHTML += `<p class="fs-5 border-bottom pb-3 border-secondary">The Fibonacci of <b>${
