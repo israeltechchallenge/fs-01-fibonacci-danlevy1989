@@ -33,14 +33,22 @@ function getFromServer(number) {
     })
     .then((data) => {
       errorText.classList.add("visually-hidden");
-      fibonacciResult.classList.remove("visually-hidden");
-      fibonacciResult.innerHTML = data.result;
+      fibonacciResult.classList.remove("visually-hidden", "text-danger");
+      fibonacciResult.innerHTML = `<u><b>${data.result}</b></u>`;
       spinnerDiv.classList.add("visually-hidden");
     })
     .catch((error) => {
+      errorText.classList.add("visually-hidden");
+      fibonacciResult.classList.remove("visually-hidden");
+      fibonacciResult.classList.add("text-danger");
       fibonacciInputBox.classList.add("border-danger", "text-danger");
       spinnerDiv.classList.add("visually-hidden");
-      errorText.innerHTML = error;
-      errorText.classList.remove("visually-hidden");
+      fibonacciResult.innerHTML = error;
     });
 }
+
+// console.log(
+//   `The Fibonacci of ${data.results[0].number} is ${
+//     data.results[0].result
+//   } Calculated at ${new Date(data.results[0].createdDate)} `
+// );
