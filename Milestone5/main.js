@@ -1,10 +1,10 @@
-const CalculateButton = document.getElementById("calculateButton");
+const calculateButton = document.getElementById("calculateButton");
 let fibonacciResult = document.getElementById("fibonacciResult");
 let spinnerDiv = document.getElementById("spinner-id");
 let fibonacciInputBox = document.getElementById("fibonacciInput");
 let errorText = document.getElementById("error-text");
 
-CalculateButton.addEventListener("click", resultFunc);
+calculateButton.addEventListener("click", resultFunc);
 
 function resultFunc() {
   let fibonacciInput = document.getElementById("fibonacciInput").value;

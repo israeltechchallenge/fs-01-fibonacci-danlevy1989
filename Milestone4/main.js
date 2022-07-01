@@ -1,7 +1,7 @@
-const CalculateButton = document.getElementById("calculateButton");
+const calculateButton = document.getElementById("calculateButton");
 let fibonacciResult = document.getElementById("fibonacciResult");
 let fibonacciInput = document.getElementById("fibonacciInput").value;
-CalculateButton.addEventListener("click", resultFunc);
+calculateButton.addEventListener("click", resultFunc);
 
 function resultFunc() {
   fibonacciInput = document.getElementById("fibonacciInput").value;

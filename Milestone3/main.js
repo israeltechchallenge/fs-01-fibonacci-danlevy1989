@@ -1,5 +1,5 @@
-const CalculateButton = document.getElementById("calculateButton");
-CalculateButton.addEventListener("click", fibbo);
+const calculateButton = document.getElementById("calculateButton");
+calculateButton.addEventListener("click", fibbo);
 
 function fibbo() {
   let fibonacciInput = document.getElementById("fibonacciInput").value;
